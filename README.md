@@ -8,7 +8,7 @@ This program is a Python implementation of various functionalities of the UNIX c
 
 ## How to Use?
 ```
-simple_cat.py [-h] [-w] [-a] [-c] [-mk] [files [files ...]]
+python simple_cat.py [-h] [-w] [-a] [-c] [-mk] [files [files ...]]
 ```
 
 ## Arguments
