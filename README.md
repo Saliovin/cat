@@ -19,7 +19,8 @@ positional arguments:
 
 optional arguments:
   -h, --help    show this help message and exit
-  -w, --write   Requests a string from the user and writes it to everyfile
+  -w, --write   Requests a string from the user and writes it to every file
+                Creates a new file if output file is non-existing.
   -a, --append  Takes all the data from inputted files, except the last and
                 appends them to the last file. Creates a new file if output
                 file is non-existing.

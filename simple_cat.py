@@ -80,8 +80,9 @@ def create(filenames):
 parser = argparse.ArgumentParser()
 parser.add_argument("files", nargs="*", help="Files to be opened. Prints the contents of each file if there are no "
                                              "optional arguments.")
-parser.add_argument("-w", "--write", action="store_true", help="Requests a string from the user and writes it to every"
-                                                               "file")
+parser.add_argument("-w", "--write", action="store_true", help="Requests a string from the user and writes it to every "
+                                                               "file. Creates a new file if output file is "
+                                                               "non-existing.")
 parser.add_argument("-a", "--append", action="store_true", help="Takes all the data from inputted files, except the "
                                                                 "last and appends them to the last file. Creates a new"
                                                                 " file if output file is non-existing.")
