@@ -8,7 +8,7 @@ This program is a Python implementation of various functionalities of the UNIX c
 
 ## How to Use?
 ```
-python simple_cat.py [-h] [-a] [-c] [-mk] [files [files ...]]
+simple_cat.py [-h] [-w] [-a] [-c] [-mk] [files [files ...]]
 ```
 
 ## Arguments
@@ -19,6 +19,7 @@ positional arguments:
 
 optional arguments:
   -h, --help    show this help message and exit
+  -w, --write   Requests a string from the user and writes it to everyfile
   -a, --append  Takes all the data from inputted files, except the last and
                 appends them to the last file. Creates a new file if output
                 file is non-existing.
