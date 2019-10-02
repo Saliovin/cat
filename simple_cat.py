@@ -25,6 +25,19 @@ def read(files):
     print(get_data(files))
 
 
+def write_file(files, string):
+    """
+    Writes the string parameter to every file in list.
+
+    :param files: A list of file names in the form of strings.
+    :param string: String to be written.
+    :return: None
+    """
+    for file in files:
+        with open(file, "w+") as f:
+            f.write(string)
+
+
 def concat(output_file, files):
     """
     Concatenate all files except the last one in the list and output it to the last file in the list.
@@ -65,8 +78,10 @@ def create(filenames):
 
 # Adding arguments
 parser = argparse.ArgumentParser()
-parser.add_argument("files", nargs="*", help="Files to be opened. Prints the contents of each file if there are no"
+parser.add_argument("files", nargs="*", help="Files to be opened. Prints the contents of each file if there are no "
                                              "optional arguments.")
+parser.add_argument("-w", "--write", action="store_true", help="Requests a string from the user and writes it to every"
+                                                               "file")
 parser.add_argument("-a", "--append", action="store_true", help="Takes all the data from inputted files, except the "
                                                                 "last and appends them to the last file. Creates a new"
                                                                 " file if output file is non-existing.")
@@ -75,7 +90,10 @@ parser.add_argument("-c", "--concat", action="store_true", help="Takes all the d
                                                                 " new file if output file is non-existing.")
 parser.add_argument("-mk", "--make", action="store_true", help="Creates each inputted file if non-existing.")
 args = parser.parse_args()
-if args.append:
+if args.write:
+    string_to_write = input("Input string to write: ")
+    write_file(args.files, string_to_write)
+elif args.append:
     append(args.files[-1], args.files[:-1])
 elif args.concat:
     concat(args.files[-1], args.files[:-1])
